@@ -7,27 +7,25 @@ var database = [
         username: "admin",
         password: "newadmin123"
     }
-]
+];
 
 function getInfo() {
-    var username = document.getElementById("username").value
-    var password = document.getElementById("password").value
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
     for (var i = 0; i < database.length; i++) {
-        if (username[i] == database[i].username && password[i] == database[i].password) {
-            console.log("login successful!");
-            window.location.href = 'https://www.linkedin.com'
-        }
-        else {
-            console.log("login failed!")
-            if (username[i] != database[i].username && password[i] != database[i].password) {
-                console.log("incorrect username and password!");
-            }
-            else if (username[i] != database[i].username) {
-                console.log("incorrect username!");
-            }
-            else if (password[i] != database[i].password) {
-                console.log("incorrect password!");
+        if (username === database[i].username && password === database[i].password) {
+            console.log("Login successful!");
+            window.location.href = 'https://www.linkedin.com'; // Redirect to LinkedIn
+            return; // Exit the function once login is successful
+        } else {
+            console.log("Login failed!");
+            if (username !== database[i].username && password !== database[i].password) {
+                console.log("Incorrect username and password!");
+            } else if (username !== database[i].username) {
+                console.log("Incorrect username!");
+            } else if (password !== database[i].password) {
+                console.log("Incorrect password!");
             }
         }
     }
