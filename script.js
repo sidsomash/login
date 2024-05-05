@@ -10,8 +10,8 @@ var database = [
 ]
 
 function getInfo() {
-    var username = document.getElementById(username).value
-    var password = document.getElementById(password).value
+    var username = document.getElementById("username").value
+    var password = document.getElementById("password").value
 
     for (var i = 0; i < database.length; i++) {
         if (username[i] == database[i].username && password[i] == database[i].password) {
