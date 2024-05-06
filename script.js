@@ -32,8 +32,8 @@ function getInfo() {
 }
 
 function createAccount() {
-    var username = document.getElementById("newUsername").value;
-    var password = document.getElementById("newPassword").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
     // Check if username already exists
     for (var i = 0; i < database.length; i++) {
