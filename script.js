@@ -30,3 +30,20 @@ function getInfo() {
         }
     }
 }
+
+function createAccount() {
+    var username = document.getElementById("newUsername").value;
+    var password = document.getElementById("newPassword").value;
+
+    // Check if username already exists
+    for (var i = 0; i < database.length; i++) {
+        if (username === database[i].username) {
+            console.log("Username already exists!");
+            return;
+        }
+    }
+
+    // Add new user to database
+    database.push({ username: username, password: password });
+    console.log("Account created successfully!");
+}
