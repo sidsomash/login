@@ -68,5 +68,6 @@
         // Add new user to database
         database.push({ username: username, password: password });
         console.log("Account created successfully!");
+        window.location.href = 'login_page.html';
     }
     
