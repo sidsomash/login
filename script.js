@@ -12,29 +12,33 @@
     function getInfo() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-
+        var messageElement = document.getElementById("message");
+    
+        // Clear previous messages
+        messageElement.innerHTML = "";
+    
         if (username === null || password === null) {
             getInfo();
             return;
         }
-
+    
         for (var i = 0; i < database.length; i++) {
             if (username === database[i].username && password === database[i].password) {
-                console.log("Login successful!");
+                messageElement.innerHTML = "Login successful!";
                 window.location.href = 'https://www.linkedin.com'; // Redirect to LinkedIn
                 return; // Exit the function once login is successful
             } else {
-                console.log("Login failed!");
+                messageElement.innerHTML = "Login failed!";
                 if (username !== database[i].username && password !== database[i].password) {
-                    console.log("Incorrect username and password!");
+                    messageElement.innerHTML += "<br>Incorrect username and password!";
                 } else if (username !== database[i].username) {
-                    console.log("Incorrect username!");
+                    messageElement.innerHTML += "<br>Incorrect username!";
                 } else if (password !== database[i].password) {
-                    console.log("Incorrect password!");
+                    messageElement.innerHTML += "<br>Incorrect password!";
                 }
             }
         }
-    }
+    }    
 
     function createAccount() {
         var username = document.getElementById("username").value;
